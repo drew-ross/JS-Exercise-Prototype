@@ -35,14 +35,14 @@ Two options are included below.
 <details>
   <summary>2. Using VSCode and the Command Line</summary>
 
-  1. Fork repo and add TL as collaborator on Github.
-  1. Clone _your_ fork (not Lambda's repo by mistake!).
-  1. `cd` into your newly cloned repository.
-  1. Create a new branch by typing `git checkout -b <firstName-lastName>`.
-  1. Install dependencies by typing `npm install`.
-  1. Run tests by typing `npm run test:watch`.
-  1. Work on your branch, push commits and create PR as usual.
-  1. Make sure to commit often!!
+  {X} Fork repo and add TL as collaborator on Github.
+  {X} Clone _your_ fork (not Lambda's repo by mistake!).
+  {X} `cd` into your newly cloned repository.
+  {X} Create a new branch by typing `git checkout -b <firstName-lastName>`.
+  {X} Install dependencies by typing `npm install`.
+  {X} Run tests by typing `npm run test:watch`.
+  {X} Work on your branch, push commits and create PR as usual.
+  {X} Make sure to commit often!!
 
   <img alt='instructions VSCode' src='./instructionsVScode.png'>
 </details>
