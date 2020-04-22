@@ -80,10 +80,32 @@ Person.prototype.toString = function() {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
-
+function Car(model, milesPerGallon) {
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
+}
+Car.prototype.fill = function(gallons) {
+  this.tank += gallons;
+}
+Car.prototype.drive = function(distance) {
+  while(distance > 0 && this.tank > 0) {
+    this.odometer += 1;
+    this.tank -= (1 / this.milesPerGallon);
+    this.tank = Math.round(this.tank*100) / 100; //Fix floating point errors
+    distance -= 1;
+    if(this.tank <= 0) {
+      return `I ran out of fuel at ${this.odometer} miles!`;
+    }
+  }
+  return `I arrived at the destination at ${this.odometer} miles.`
 }
 
+const mobile = new Car("Batmobile", 100);
+console.log(mobile.drive(50));
+console.log(mobile.fill(10));
+console.log(mobile.drive(50));
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
