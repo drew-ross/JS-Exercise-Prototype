@@ -139,7 +139,7 @@ console.log(baby.play());
   1. Global Binding - When used in a global scope, 'this' refers to the window object
   2. Implicit Binding - When used to define an object's properties or methods, 'this' will refer to the object before the dot
   3. New Binding - When used in a constructor function, 'this' will bind to whatever object is created with the constructor function
-  4. Explicit Binding - When using .call, .apply, and .bind, we explicitly tell 'this' what object to bind to.
+  4. Explicit Binding - When using .call, .apply, and .bind, we explicitly tell 'this' what object to bind to. .call binds a function/method to another object and takes all arguments individually. .apply is like .call but takes arguments as an array. .bind creates a new function that binds to another object, and the arguments are passed when the new function is called.
 */
 
 
