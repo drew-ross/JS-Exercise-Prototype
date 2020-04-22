@@ -88,8 +88,12 @@ function Car(model, milesPerGallon) {
 }
 Car.prototype.fill = function(gallons) {
   this.tank += gallons;
+  return `I filled the tank with ${gallons} gallons. There are now ${this.tank} gallons in the tank.`;
 }
 Car.prototype.drive = function(distance) {
+  if(this.tank <= 0) {
+    return `I need some gas first.`;
+  }
   while(distance > 0 && this.tank > 0) {
     this.odometer += 1;
     this.tank -= (1 / this.milesPerGallon);
@@ -102,10 +106,11 @@ Car.prototype.drive = function(distance) {
   return `I arrived at the destination at ${this.odometer} miles.`
 }
 
-const mobile = new Car("Batmobile", 100);
+const mobile = new Car("Batmobile", 10);
 console.log(mobile.drive(50));
 console.log(mobile.fill(10));
-console.log(mobile.drive(50));
+console.log(mobile.fill(12));
+console.log(mobile.drive(500));
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
@@ -119,20 +124,21 @@ function Baby(name, age, favoriteToy) {
 }
 Baby.prototype = Object.create(Person.prototype);
 Baby.prototype.play = function() {
-  return `Playing with ${this.favoriteToy}.`;
+  return `${this.name} is playing with ${this.favoriteToy}.`;
 }
 const baby = new Baby('Johnny', 2, 'T-rex');
-baby.eat('food');
+baby.eat('applesauce');
 console.log(baby.stomach);
+console.log(baby.play());
 
 /* 
   TASK 4
 
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. Global Binding - When used in a global scope, 'this' refers to the window object
+  2. Implicit Binding - When used to define an object's properties or methods, 'this' will refer to the object before the dot
+  3. New Binding - When used in a constructor function, 'this' will bind to whatever object is created with the constructor function
+  4. Explicit Binding - When using .call, .apply, and .bind, we explicitly tell 'this' what object to bind to.
 */
 
 
