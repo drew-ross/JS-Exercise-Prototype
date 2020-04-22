@@ -106,11 +106,12 @@ Car.prototype.drive = function(distance) {
   return `I arrived at the destination at ${this.odometer} miles.`
 }
 
-const mobile = new Car("Batmobile", 10);
+const mobile = new Car("Batmobile", 20);
 console.log(mobile.drive(50));
 console.log(mobile.fill(10));
-console.log(mobile.fill(12));
-console.log(mobile.drive(500));
+console.log(mobile.drive(16));
+console.log(mobile.fill(18));
+console.log(mobile.drive(800));
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
